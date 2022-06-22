@@ -14,10 +14,14 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     @yield('css')
 </head>
-
+<div class="header3">
+    {{-- <img src="img/logo.png" alt="logo" /> --}}
+ <img src="{{ asset('images/logo.png') }}"  alt="logo"/>
+</div>
 <body class="hold-transition login-page">
     <div class="login-box">
         <div class="login-logo">
+
             <a href="../../index2.html">{{ config('app.name') }}</a>
         </div>
         <!-- /.login-logo -->
@@ -38,3 +42,20 @@
 </body>
 
 </html>
+<style>
+    body {
+      background-image: url("https://img.freepik.com/free-vector/hand-painted-watercolour-background-earth-tone-colours_1048-16104.jpg?w=996&t=st=1655895387~exp=1655895987~hmac=2dfc88e4df1d45428078b724ac19bee3d60bf126149a2eece192fc237bba3b4e");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: 100% 100%;
+
+
+}
+.header3 img {
+  float: left;
+  width: 100px;
+  height: 100px;
+  background: #555;
+  opacity: 1.0;
+}
+    </style>

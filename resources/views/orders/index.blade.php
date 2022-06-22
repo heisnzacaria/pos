@@ -23,11 +23,12 @@
                         <div class="col-md-2">
                             <button class="btn btn-outline-primary" type="submit">Submit</button>
                         </div>
+
                     </div>
                 </form>
             </div>
         </div>
-        <table class="table">
+        <table class="table" id="tab">
             <thead>
                 <tr>
                     <th>ID</th>
@@ -74,8 +75,28 @@
                 </tr>
             </tfoot>
         </table>
+
+        <div class="col-md-2">
+
+        {{-- <button onclick="window.print()">Print this page</button> --}}
+        <input type="button" value="Print Table" onclick="myApp.printTable()" />
+                        </div>
+
         {{ $orders->render() }}
     </div>
 </div>
+
+<script>
+    var myApp = new function () {
+        this.printTable = function () {
+            var tab = document.getElementById('tab');
+            var win = window.open('', '', 'height=700,width=700');
+            win.document.write(tab.outerHTML);
+            win.document.close();
+            win.print();
+        }
+    }
+</script>
+
 @endsection
 
