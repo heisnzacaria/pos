@@ -7,6 +7,7 @@
 @endsection
 
 @section('content')
+
 <div class="card">
     <div class="card-body">
         <div class="row">
@@ -38,11 +39,12 @@
                     <th>Status</th>
                     <th>To Pay</th>
                     <th>Created At</th>
+                   
                 </tr>
             </thead>
             <tbody>
                 @foreach ($orders as $order)
-                <tr>
+                <tr id="tab1">
                     <td>{{$order->id}}</td>
                     <td>{{$order->getCustomerName()}}</td>
                     <td>{{ config('settings.currency_symbol') }} {{$order->formattedTotal()}}</td>
@@ -57,9 +59,11 @@
                         @elseif($order->receivedAmount() > $order->total())
                             <span class="badge badge-info">Change</span>
                         @endif
+                        
                     </td>
                     <td>{{config('settings.currency_symbol')}} {{number_format($order->total() - $order->receivedAmount(), 2)}}</td>
                     <td>{{$order->created_at}}</td>
+                    
                 </tr>
                 @endforeach
             </tbody>
@@ -79,7 +83,8 @@
         <div class="col-md-2">
 
         {{-- <button onclick="window.print()">Print this page</button> --}}
-        <input type="button" value="Print Table" onclick="myApp.printTable()" />
+        <input type="button" value="Print All" onclick="myApp.printTable()" />
+     <input type="button" value="Print Last Bill" onclick="myApp2.printTable1()" />
                         </div>
 
         {{ $orders->render() }}
@@ -89,7 +94,19 @@
 <script>
     var myApp = new function () {
         this.printTable = function () {
+            var docTitle = document.title;
             var tab = document.getElementById('tab');
+            var win = window.open('', '', 'height=700,width=700');
+            win.document.write(tab.outerHTML);
+            win.document.close();
+          
+           
+            win.print();
+        }
+    }
+    var myApp2 = new function () {
+        this.printTable1 = function () {
+            var tab = document.getElementById('tab1');
             var win = window.open('', '', 'height=700,width=700');
             win.document.write(tab.outerHTML);
             win.document.close();
