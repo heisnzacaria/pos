@@ -53,8 +53,9 @@
                     </a>
                     <li class="nav-item has-treeview">
                         <a href="{{ route('downloads.index') }}" class="nav-link ">
-                            <i class="nav-icon fas fa-cart-plus"></i>
-                            <p>Download</p>
+                            <i class="nav-icon fas fa-print"></i>
+                           
+                            <p>Administrative Paperwork</p>
                         </a>
                     </li>
                 </li>
