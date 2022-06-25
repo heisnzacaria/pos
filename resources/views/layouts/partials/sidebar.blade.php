@@ -51,6 +51,12 @@
                         <i class="nav-icon fas fa-users"></i>
                         <p>Customers</p>
                     </a>
+                    <li class="nav-item has-treeview">
+                        <a href="{{ route('downloads.index') }}" class="nav-link ">
+                            <i class="nav-icon fas fa-cart-plus"></i>
+                            <p>Download</p>
+                        </a>
+                    </li>
                 </li>
                 <li class="nav-item has-treeview">
                     <a href="{{ route('settings.index') }}" class="nav-link {{ activeSegment('settings') }}">

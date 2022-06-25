@@ -15,7 +15,7 @@
     @yield('css')
 </head>
 <div class="header3">
-    {{-- <img src="img/logo.png" alt="logo" /> --}}
+    
  <img src="{{ asset('images/logo.png') }}"  alt="logo"/>
 </div>
 <body class="hold-transition login-page">

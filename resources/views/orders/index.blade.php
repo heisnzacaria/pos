@@ -96,10 +96,11 @@
         this.printTable = function () {
             var docTitle = document.title;
             var tab = document.getElementById('tab');
-            var win = window.open('', '', 'height=700,width=700');
+            var win = window.open('', '', 'height=900,width=700');
+     
             win.document.write(tab.outerHTML);
             win.document.close();
-          
+            win.document.title = "LCDOC Receipt";
            
             win.print();
         }
@@ -110,6 +111,7 @@
             var win = window.open('', '', 'height=700,width=700');
             win.document.write(tab.outerHTML);
             win.document.close();
+            win.document.title = "LCDOC Client Receipt";
             win.print();
         }
     }
