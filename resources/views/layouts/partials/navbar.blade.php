@@ -8,18 +8,18 @@
     </ul>
 
     <!-- SEARCH FORM -->
-    {{--
+   
     <form class="form-inline ml-3">
       <div class="input-group input-group-sm">
-        <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-        <div class="input-group-append">
-          <button class="btn btn-navbar" type="submit">
-            <i class="fas fa-search"></i>
-          </button>
-        </div>
+       <div id="google_translate_element"></div>
       </div>
     </form>
-    --}}
+    <script type="text/javascript">// <![CDATA[
+      function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+      }
+      // ]]></script>
+      <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" type="text/javascript"></script>
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
