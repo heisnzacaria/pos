@@ -1,28 +1,22 @@
 @extends('layouts.admin')
 
-@section('title', 'Employee Details')
-@section('content-header', 'Employee Details')
+@section('title', 'Degital Work Certificate')
+@section('content-header', 'Degital Work certificate Details')
 @section('content-actions')
-    <a href="{{route('cart.index')}}" class="btn btn-primary">Open POS</a>
+
 @endsection
 
 @section('content')
 
+<div class="form1">
+ <center>  <img class="resize" src="{{ asset('images/logo.png') }}"/></center>
 
 <div class="container">
     <div class="row">
-        <div class="col-md-6 col-md-offset-3" style="margin-top:50px">
-            <h4>Employee deatails</h4>
+        <div class="col-md-12 col-md-offset-6" style="margin-top:1%">
+            <h4><center>Work Certificate details</h4></center>
             <hr>
-            @if (Session::get('success'))
-            <div class="alert alert-success">
-            {{Session::get('success')}}
-    </div>
-            @endif
-            @if (Session::get('fail'))
-            <div class="alert alert-danger">
-            (Session::get('success'))</div>
-            @endif
+
                 <form action="new" method="post">
                     @csrf
                     <div class="form-group">
@@ -61,16 +55,37 @@
 
                             @enderror</span>
                     </div>
+                    <hr>
                         <div class="form-group">
-                    <button type="submit" class="btn btbn-primary" name="submit"> Submit </button>
+                            <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
                 </div>
                 </form>
         </div>
     </div>
+</div>
+
+</div>
+
+<style>
+.resize {
+    width: 70px;
+    height: auto;
+
+}
 
 
 
-        </div>
+
+
+
+     .form1 {
+        padding: 10px;
+
+      max-width: 500px;
+      margin: auto;
+      box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+    }
+</style>
 
 @endsection
 

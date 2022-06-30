@@ -57,20 +57,49 @@
                         <i class="nav-icon fas fa-users"></i>
                         <p>Customers</p>
                     </a>
-                    <li class="nav-item has-treeview">
+                    {{-- <li class="nav-item has-treeview">
                         <a href="{{ route('downloads.index') }}" class="nav-link ">
                             <i class="nav-icon fas fa-print"></i>
-                           
+
                             <p>Administrative Paperwork</p>
+                        </a>
+                    </li> --}}
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link ">
+                            <i class="nav-icon fas fa-envelope"></i>
+
+                            <p>Internship Certificate</p>
+                        </a>
+                    <li class="nav-item has-treeview">
+                        <a href="crudc" class="nav-link ">
+                            <i class="nav-icon fas fa-handshake"></i>
+
+                            <p>Formation Certificate</p>
+                        </a>
+                    </li>
+                    <li class="nav-item has-treeview">
+                        <a href="crud" class="nav-link ">
+                            <i class="nav-icon fas fa-briefcase"></i>
+
+                            <p>Work Certificate</p>
                         </a>
                     </li>
                 </li>
+                <li class="nav-item has-treeview">
+                    <a href="crud_comp" class="nav-link ">
+                        <i class="nav-icon fas fa-info"></i>
+
+                        <p>Company Setting</p>
+                    </a>
+                </li>
+
                 <li class="nav-item has-treeview">
                     <a href="{{ route('settings.index') }}" class="nav-link {{ activeSegment('settings') }}">
                         <i class="nav-icon fas fa-cogs"></i>
                         <p>Settings</p>
                     </a>
                 </li>
+
                 <li class="nav-item">
                     <a href="#" class="nav-link" onclick="document.getElementById('logout-form').submit()">
                         <i class="nav-icon fas fa-sign-out-alt"></i>

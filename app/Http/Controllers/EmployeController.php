@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use PDF;
 
 class EmployeController extends Controller
 {
@@ -29,9 +30,13 @@ class EmployeController extends Controller
                 'start_date' =>$request->input('start_date'),
                 'end_date' =>$request->input('end_date'),
 
+
+
         ]);
 if($query){
-    return back()->with('success', 'Employe details been saved');
+    $company = DB::select('select * from company' );
+    $employe = DB::select('select * from employe');
+    return view('crud.show',['employe'=>$employe, 'company'=>$company])->with('success', 'Employe details been saved');
           }
             else{
     return back()->with('fail','to save employee details');
@@ -41,6 +46,20 @@ if($query){
     public function show(){
         $employe = DB::select('select * from employe');
         return view('crud.show',['employe'=>$employe]);
+
+    }
+
+    public function print(){
+
+        $company = DB::select('select * from company' );
+        $employe = DB::select('select * from employe');
+
+        $pdf = PDF::loadView('crud.print',['employe'=>$employe, 'company'=>$company]);
+
+        return $pdf->download('Degital Work Certificate.pdf');
+
+
+
 
     }
 

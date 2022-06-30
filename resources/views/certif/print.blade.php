@@ -1,13 +1,3 @@
-@extends('layouts.admin')
-
-@section('title', 'Print Work Certificate')
-@section('content-header', 'Work Certificate')
-@section('content-actions')
-
-@endsection
-
-@section('content')
-
 
 
 <div class="container" id="print">
@@ -16,7 +6,7 @@
         <div class="certificate">
             <div class="water-mark-overlay"></div>
             <div class="certificate-header">
-                <img src="{{ asset('images/logo.png') }}" class="logo" alt="">
+                <img src="{{ public_path('images/logo.png') }}" class="logo" alt="">
             </div>
             <div class="certificate-body">
 
@@ -24,6 +14,9 @@
 
                     {{$company->name}}
                     @endforeach  Review Masters</strong></p>
+
+
+
 
 
                 <h1>Certificate of Completion</h1>
@@ -72,43 +65,18 @@
     </div>
 </div>
 
-    <a href="/printwork">print</a>
+
+<style>
 
 
+.container {
+    font-family: Roboto;
+    transform: rotate(90deg);
 
-
-
-
-
-
-
-
-
-
-<script>
-
-function printdiv(){
-
-var printContents = document.getElementById('print').innerHTML;
-var originalContents = document.body.innerHTML;
-
-document.body.innerHTML = printContents;
-window.print();
-document.body.innetHTML = originalContents;
-location.reload();
-
-
-}
-
-
-</script>
-
-    <style>
-
-
-body {
+.body {
     font-family: Roboto;
 }
+
 
 .certificate-container {
     padding: 50px;
@@ -118,7 +86,7 @@ body {
     border: 20px solid #0C5280;
     padding: 25px;
     height: 600px;
-    position: relative;
+    position: landscape;
 }
 
 .certificate:after {
@@ -128,7 +96,7 @@ body {
     bottom: 0px;
     right: 0px;
     position: absolute;
-    background-image: url(https://image.ibb.co/ckrVv7/water_mark_logo.png);
+    /* background-image: url(https://image.ibb.co/ckrVv7/water_mark_logo.png); */
     background-size: 100%;
     z-index: -1;
 }
@@ -176,19 +144,5 @@ h1 {
 
 
 
-
-
-
-
-    </style>
-
-
-
-
-
-
-
-
-
-@endsection
+        </style>
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use PDF;
 
 class CertifController extends Controller
 {
@@ -31,11 +32,16 @@ class CertifController extends Controller
 
         ]);
 if($query){
-    return back()->with('success', 'Employe details been saved');
+    $company = DB::select('select * from company' );
+    $employe = DB::select('select * from employe');
+    return view('certif.show',['employe'=>$employe, 'company'=>$company])->with('success', 'Employe details been saved');
           }
             else{
     return back()->with('fail','to save employee details');
                 }
+
+
+
     }
 
     public function show(){
@@ -43,7 +49,21 @@ if($query){
         $employe = DB::select('select * from employe');
         return view('certif.show',['employe'=>$employe, 'company'=>$company]);
 
-        // return view('certif.show', compact('company'));
+
     }
+    public function print(){
+
+        $company = DB::select('select * from company' );
+        $employe = DB::select('select * from employe');
+
+        $pdf = PDF::loadView('certif.print',['employe'=>$employe, 'company'=>$company]);
+
+        return $pdf->download('Formation Certificate.pdf');
+
+
+
+
+    }
+
 
 }

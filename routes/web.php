@@ -49,6 +49,24 @@ Route::get('quote', [ProductController::class, 'quote'])->name('quote.index');
     Route::post('/cart/change-qty', [CartController::class, 'changeQty']);
     Route::delete('/cart/delete', [CartController::class, 'delete']);
     Route::delete('/cart/empty', [CartController::class, 'empty']);
+
+
+    Route::get('crud', [EmployeController::class, 'index']);
+Route::post('new', [EmployeController::class, 'new']);
+Route::get('show', [EmployeController::class, 'show']);
+Route::get('printwork', [EmployeController::class, 'print']);
+
+// certif
+Route::get('crudc', [CertifController::class, 'index']);
+Route::post('newc', [CertifController::class, 'new']);
+Route::get('showc', [CertifController::class, 'show']);
+Route::get('print', [CertifController::class, 'print']);
+
+//company details
+Route::get('crud_comp', [CompanyController::class, 'index']);
+Route::post('update_comp', [CompanyController::class, 'update']);
+Route::get('show_comp', [CompanyController::class, 'show']);
+
 });
 
 //paper documents
@@ -57,11 +75,13 @@ Route::get('quote', [ProductController::class, 'quote'])->name('quote.index');
 Route::get('crud', [EmployeController::class, 'index']);
 Route::post('new', [EmployeController::class, 'new']);
 Route::get('show', [EmployeController::class, 'show']);
+Route::get('printwork', [EmployeController::class, 'print']);
 
 // certif
 Route::get('crudc', [CertifController::class, 'index']);
 Route::post('newc', [CertifController::class, 'new']);
 Route::get('showc', [CertifController::class, 'show']);
+Route::get('printc', [CertifController::class, 'print']);
 
 //company details
 Route::get('crud_comp', [CompanyController::class, 'index']);

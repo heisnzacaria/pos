@@ -27,9 +27,6 @@
                     @endforeach  Review Masters</strong></p>
 
 
-
-
-
                 <h1>Certificate of Completion</h1>
 
                 @foreach($employe as $employe)
@@ -75,7 +72,8 @@
         </div>
     </div>
 </div>
-    <center>  <button id="printq" type="button" class="btn btn-info" onclick="printdiv()">Print The Quotate</button></center>
+
+    <a href="/printc">print</a>
 
 
 
@@ -87,9 +85,7 @@
 
 
 
-    <script>
-      document.getElementById("current_date").innerHTML = Date();
-      </script>
+
 <script>
 
 function printdiv(){
