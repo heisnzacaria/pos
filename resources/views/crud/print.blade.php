@@ -1,5 +1,4 @@
 
-
 <div class="container" id="print">
 
     <div class="certificate-container">
@@ -79,7 +78,7 @@
 
 
 .certificate-container {
-    padding: auto;
+    padding: 0%;
     width: 1024px;
 }
 .certificate {

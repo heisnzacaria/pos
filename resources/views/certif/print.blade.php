@@ -72,6 +72,7 @@
 .container {
     font-family: Roboto;
     transform: rotate(90deg);
+}
 
 .body {
     font-family: Roboto;
@@ -79,7 +80,7 @@
 
 
 .certificate-container {
-    padding: 50px;
+    padding: 0px;
     width: 1024px;
 }
 .certificate {
