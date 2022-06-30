@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\OrderStoreRequest;
 use App\Models\Order;
 use Illuminate\Http\Request;
+use db;
 
 class OrderController extends Controller
 {
@@ -52,4 +53,17 @@ class OrderController extends Controller
         ]);
         return 'success';
     }
+    public function invoice($id) {
+       
+$order = Order::where('id',$id)->first();
+
+$total = $order->map(function($i) {
+    return $i->total();
+})->sum();
+
+  
+return view('invoices.index',compact('order','total'));
+
+}
+
 }

@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Order;
 use Illuminate\Http\Request;
+
+use db;
 
 class CartController extends Controller
 {
@@ -83,4 +86,11 @@ class CartController extends Controller
 
         return response('', 204);
     }
+public function invoice($id){
+
+    $invoices =orders::where('id',$id)->first();
+    return view('invoices.index',compact('invoices'));
+
+}
+
 }

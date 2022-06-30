@@ -8,6 +8,7 @@ use App\Http\Resources\ProductResource;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use DB;
 
 class ProductController extends Controller
 {
@@ -140,5 +141,14 @@ class ProductController extends Controller
         return response()->json([
             'success' => true
         ]);
+}
+
+public function invoice($id) {
+
+    
+    $products = DB::select('SELECT * FROM products');
+      
+    return view('invoices.index',compact('products'));
+    
     }
 }

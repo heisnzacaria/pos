@@ -34,6 +34,12 @@
                         <p>Products</p>
                     </a>
                 </li>
+                {{-- <li class="nav-item has-treeview">
+                    <a href="{{ route('cart2.index') }}" class="nav-link {{ activeSegment('cart2') }}">
+                        <i class="nav-icon fas fa-cash-register"></i>
+                        <p>Invoince</p>
+                    </a>
+                </li> --}}
                 <li class="nav-item has-treeview">
                     <a href="{{ route('cart.index') }}" class="nav-link {{ activeSegment('cart') }}">
                         <i class="nav-icon fas fa-cart-plus"></i>
