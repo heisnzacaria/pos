@@ -23,6 +23,13 @@
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <li class="nav-item has-treeview">
+                    <a  class="nav-title ">
+                        <i class="nav-icon fas fa-title"></i>
+
+                        <p>POINT OF SALES</p>
+                    </a>
+                </li>
+                <li class="nav-item has-treeview">
                     <a href="{{route('home')}}" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>Dashboard</p>
@@ -57,6 +64,13 @@
                         <i class="nav-icon fas fa-users"></i>
                         <p>Customers</p>
                     </a>
+                    <li class="nav-item has-treeview">
+                        <a  class="nav-title ">
+                            <i class="nav-icon fas fa-title"></i>
+
+                            <p>DIGITAL CERTIFICATES</p>
+                        </a>
+                    </li>
                     {{-- <li class="nav-item has-treeview">
                         <a href="{{ route('downloads.index') }}" class="nav-link ">
                             <i class="nav-icon fas fa-print"></i>
@@ -65,12 +79,6 @@
                         </a>
                     </li> --}}
                     <li class="nav-item has-treeview">
-                        <a href="#" class="nav-link ">
-                            <i class="nav-icon fas fa-envelope"></i>
-
-                            <p>Internship Certificate</p>
-                        </a>
-                    <li class="nav-item has-treeview">
                         <a href="crudc" class="nav-link ">
                             <i class="nav-icon fas fa-handshake"></i>
 
@@ -78,12 +86,26 @@
                         </a>
                     </li>
                     <li class="nav-item has-treeview">
+                        <a href="crudi" class="nav-link ">
+                            <i class="nav-icon fas fa-envelope"></i>
+
+                            <p>Internship Certificate</p>
+                        </a>
+
+                    <li class="nav-item has-treeview">
                         <a href="crud" class="nav-link ">
                             <i class="nav-icon fas fa-briefcase"></i>
 
                             <p>Work Certificate</p>
                         </a>
                     </li>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a  class="nav-title ">
+                        <i class="nav-icon fas fa-title"></i>
+
+                        <p>APPLICATION SETTING</p>
+                    </a>
                 </li>
                 <li class="nav-item has-treeview">
                     <a href="crud_comp" class="nav-link ">
@@ -115,3 +137,15 @@
     </div>
     <!-- /.sidebar -->
 </aside>
+
+<style>
+
+.nav-title{
+
+
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-style: italic;
+    color: #4CAF50;
+}
+
+</style>

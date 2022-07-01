@@ -6,16 +6,17 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use PDF;
 
-class CertifController extends Controller
+
+class InternController extends Controller
 {
     public function index(){
 
-        return view('certif.index');
+        return view('intern.index');
 
     }
 
     public function new(Request $request){
-   $request ->validate([
+        $request ->validate([
             'full_name' => 'required',
             'cine' => 'required',
             'birthday' => 'required',
@@ -35,40 +36,38 @@ class CertifController extends Controller
                 'start_date' =>$request->input('start_date'),
                 'end_date' =>$request->input('end_date'),
                 'address' =>$request->input('address'),
+
+
+
         ]);
 if($query){
     $company = DB::select('select * from company' );
     $employe = DB::select('select * from employe');
-    return view('certif.show',['employe'=>$employe, 'company'=>$company])->with('success', 'Employe details been saved');
+    return view('intern.show',['employe'=>$employe, 'company'=>$company])->with('success', 'Employe details been saved');
           }
             else{
     return back()->with('fail','to save employee details');
                 }
-
-
-
     }
 
     public function show(){
-        $company = DB::select('select * from company' );
         $employe = DB::select('select * from employe');
-        return view('certif.show',['employe'=>$employe, 'company'=>$company]);
-
+        $company = DB::select('select * from company' );
+        return view('intern.show',['employe'=>$employe, 'company'=>$company]);
 
     }
+
     public function print(){
 
         $company = DB::select('select * from company' );
         $employe = DB::select('select * from employe');
 
-        $pdf = PDF::loadView('certif.print',['employe'=>$employe, 'company'=>$company]);
+        $pdf = PDF::loadView('intern.print',['employe'=>$employe, 'company'=>$company]);
 
-        return $pdf->download('Formation Certificate.pdf');
+        return $pdf->download('Digital Work Certificate.pdf');
 
 
 
 
     }
-
-
 }

@@ -32,6 +32,14 @@
                         @enderror</span>
 
                     </div>
+                    <div class="form-group" >
+                        <label for="">New Responsable</label>
+                        <input type="text" class="form-control" name="responsable" placeholder="Enter the name of the new responsable" value="{{$company->responsable}}">
+                        <span style="color: red">@error('responsable') {{$message}}
+
+                        @enderror</span>
+
+                    </div>
                     <div class="form-group">
                         <label for="">New RC</label>
                         <input type="text" class="form-control" name="rc" placeholder="Enter new RC" value="{{$company->rc}}">
@@ -82,6 +90,14 @@
                             @enderror</span>
 
                     </div>
+                    <div class="form-group">
+                        <label for="">New town</label>
+                        <input type="text" class="form-control" name="ville"  value="{{$company->ville}}"" placeholder="Enter the new town">
+                        <span style="color: red">@error('ville') {{$message}}
+
+                            @enderror</span>
+
+                    </div>
                     <hr>
                         <div class="form-group">
                             <button type="submit" class="btn btn-danger btn-lg btn-block">Update</button>
@@ -95,14 +111,23 @@
 </div>
 <style>
 
+.content{
+    margin: auto;
+    overflow-y: scroll;
+    padding: auto;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.04);
+}
+/* .form1 {
 
-.form1 {
-        padding: 10px;
 
+
+
+max-height: 800px;
       max-width: 500px;
       margin: auto;
       box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
-    }
+    } */
+
     .resize {
     width: 70px;
     height: auto;

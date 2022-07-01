@@ -18,17 +18,23 @@ class EmployeController extends Controller
         $request ->validate([
             'full_name' => 'required',
             'cine' => 'required',
+            'birthday' => 'required',
             'title' => 'required',
+            'depart' => 'required',
             'start_date' => 'required',
-            'end_date' => 'required'
+            'end_date' => 'required',
+            'address' => 'required'
         ]);
         DB::table('employe')->delete();
         $query = DB::table('employe')->insert([
                 'full_name' =>$request->input('full_name'),
                 'cine' =>$request->input('cine'),
+                'birthday' =>$request->input('birthday'),
                 'title' =>$request->input('title'),
+                'depart' =>$request->input('depart'),
                 'start_date' =>$request->input('start_date'),
                 'end_date' =>$request->input('end_date'),
+                'address' =>$request->input('address'),
 
 
 
@@ -45,7 +51,8 @@ if($query){
 
     public function show(){
         $employe = DB::select('select * from employe');
-        return view('crud.show',['employe'=>$employe]);
+        $company = DB::select('select * from company' );
+        return view('crud.show',['employe'=>$employe, 'company'=>$company]);
 
     }
 
@@ -56,7 +63,7 @@ if($query){
 
         $pdf = PDF::loadView('crud.print',['employe'=>$employe, 'company'=>$company]);
 
-        return $pdf->download('Degital Work Certificate.pdf');
+        return $pdf->download('Digital Work Certificate.pdf');
 
 
 

@@ -21,12 +21,15 @@ class CompanyController extends Controller
 
         $data = array(
             'name' => $request->name,
+            'responsable' => $request->responsable,
             'rc' => $request->rc,
             'patent' => $request->patent,
             'if' => $request->if,
             'ice' => $request->ice,
             'phone' => $request->phone,
             'address' => $request->address,
+            'ville' => $request->ville,
+
 
         );
 $result = DB::table('company')->updateOrInsert(['id'=> $id],$data);

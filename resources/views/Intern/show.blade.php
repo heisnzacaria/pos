@@ -1,32 +1,37 @@
+@extends('layouts.admin')
+
+@section('title', 'Print Work Certificate')
+@section('content-header', 'Work Certificate')
+@section('content-actions')
+
+@endsection
+
+@section('content')
+
 
 
 <div class="container" id="print">
-    @foreach($employe as $employe)
-    @foreach($company as $company)
+
     <div class="certificate-container">
         <div class="certificate">
             <div class="water-mark-overlay"></div>
             <div class="certificate-header">
-                <img src="{{ public_path('images/logo.png') }}" class="logo" alt="">
-
+                <img src="{{ asset('images/logo.png') }}" class="logo" alt="">
             </div>
             <div class="certificate-body">
 
-                <p class="certificate-title"><strong>Certificat En
+                <p class="certificate-title"><strong>RENR NCLEX AND CONTINUING EDUCATION  @foreach($company as $company)
 
-                    {{$employe->title}}
-                     Review Masters</strong></p>
-
-
-
+                    {{$company->name}}
+                    @endforeach  Review Masters</strong></p>
 
 
                 <h1>Certificate of Completion</h1>
 
-
+                @foreach($employe as $employe)
 
                 {{$employe->full_name}}
-
+                @endforeach
                 <p class="student-name"> </p>
                 <div class="certificate-content">
                     <div class="about-certificate">
@@ -66,31 +71,54 @@
         </div>
     </div>
 </div>
-@endforeach
-@endforeach
 
-<style>
+    <a href="/printintern">print</a>
 
 
-.container {
-    font-family: Roboto;
-    transform: rotate(90deg);
+
+
+
+
+
+
+
+
+
+
+<script>
+
+function printdiv(){
+
+var printContents = document.getElementById('print').innerHTML;
+var originalContents = document.body.innerHTML;
+
+document.body.innerHTML = printContents;
+window.print();
+document.body.innetHTML = originalContents;
+location.reload();
+
+
 }
 
-.body {
+
+</script>
+
+    <style>
+
+
+body {
     font-family: Roboto;
 }
-
 
 .certificate-container {
-    padding: 0px;
+    padding: 50px;
     width: 1024px;
 }
 .certificate {
     border: 20px solid #0C5280;
     padding: 25px;
     height: 600px;
-    position: landscape;
+    position: relative;
 }
 
 .certificate:after {
@@ -100,7 +128,7 @@
     bottom: 0px;
     right: 0px;
     position: absolute;
-    /* background-image: url(https://image.ibb.co/ckrVv7/water_mark_logo.png); */
+    background-image: url(https://image.ibb.co/ckrVv7/water_mark_logo.png);
     background-size: 100%;
     z-index: -1;
 }
@@ -148,5 +176,19 @@ h1 {
 
 
 
-        </style>
+
+
+
+
+    </style>
+
+
+
+
+
+
+
+
+
+@endsection
 

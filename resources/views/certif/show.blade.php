@@ -10,6 +10,9 @@
 
 
 
+@foreach ($company as $company )
+  @foreach($employe as $employe)
+
 
 <div class="container" id="print">
 
@@ -18,21 +21,26 @@
             <div class="water-mark-overlay"></div>
             <div class="certificate-header">
                 <img src="{{ asset('images/logo.png') }}" class="logo" alt="">
+                <hr>
+                {{$company->name}}
             </div>
             <div class="certificate-body">
 
-                <p class="certificate-title"><strong>RENR NCLEX AND CONTINUING EDUCATION  @foreach($company as $company)
+                <p class="certificate-title"><strong>Certificat En  {{$employe->title}}
 
-                    {{$company->name}}
-                    @endforeach  Review Masters</strong></p>
+                    {{$employe->title}}
+                     Review Masters</strong></p>
+
+
+
 
 
                 <h1>Certificate of Completion</h1>
 
-                @foreach($employe as $employe)
+
 
                 {{$employe->full_name}}
-                @endforeach
+
                 <p class="student-name"> </p>
                 <div class="certificate-content">
                     <div class="about-certificate">
@@ -73,9 +81,11 @@
     </div>
 </div>
 
-    <a href="/printc">print</a>
+    <a class="glyphicon glyphicon-print" href="/printc">print</a>
 
 
+@endforeach
+@endforeach
 
 
 

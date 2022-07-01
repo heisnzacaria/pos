@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\EmployeController;
 use App\Http\Controllers\CertifController;
+use App\Http\Controllers\InternController;
 use App\Http\Controllers\CompanyController;
 
 
@@ -50,13 +51,19 @@ Route::get('quote', [ProductController::class, 'quote'])->name('quote.index');
     Route::delete('/cart/delete', [CartController::class, 'delete']);
     Route::delete('/cart/empty', [CartController::class, 'empty']);
 
-
+//work certif
     Route::get('crud', [EmployeController::class, 'index']);
 Route::post('new', [EmployeController::class, 'new']);
 Route::get('show', [EmployeController::class, 'show']);
 Route::get('printwork', [EmployeController::class, 'print']);
 
-// certif
+//intership Certif
+Route::get('crudi', [InternController::class, 'index']);
+Route::post('newi', [InternController::class, 'new']);
+Route::get('showi', [InternController::class, 'show']);
+Route::get('printintern', [InternController::class, 'print']);
+
+//formation certif
 Route::get('crudc', [CertifController::class, 'index']);
 Route::post('newc', [CertifController::class, 'new']);
 Route::get('showc', [CertifController::class, 'show']);
@@ -82,6 +89,14 @@ Route::get('crudc', [CertifController::class, 'index']);
 Route::post('newc', [CertifController::class, 'new']);
 Route::get('showc', [CertifController::class, 'show']);
 Route::get('printc', [CertifController::class, 'print']);
+
+
+// internship Certificate
+Route::get('crudi', [InternController::class, 'index']);
+Route::post('newi', [InternController::class, 'new']);
+Route::get('showi', [InternController::class, 'show']);
+Route::get('printintern', [InternController::class, 'print']);
+
 
 //company details
 Route::get('crud_comp', [CompanyController::class, 'index']);
