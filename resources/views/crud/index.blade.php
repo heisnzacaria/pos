@@ -76,6 +76,13 @@
 
                             @enderror</span>
                     </div>
+                    <div class="form-group">
+                        <label for="">Duration</label>
+                        <input type="number" class="form-control" name="durer" placeholder="Enter duration of the formation (In Months)" value="{{ old('durer')}}">
+                        <span style="color: red">@error('durer') {{$message}}
+
+                            @enderror</span>
+                    </div>
                     <hr>
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>

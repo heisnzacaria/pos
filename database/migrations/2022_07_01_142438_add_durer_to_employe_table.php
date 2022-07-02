@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('employe', function (Blueprint $table) {
-                $table->string('address')->after('end_date')->default('Rabat');
+            $table->integer('durer')->after('end_date');
         });
     }
 
@@ -26,7 +26,7 @@ return new class extends Migration
     public function down()
     {
         Schema::table('employe', function (Blueprint $table) {
-            $table->dropColumn('address');
+            $table->dropColumn('durer');
         });
     }
 };

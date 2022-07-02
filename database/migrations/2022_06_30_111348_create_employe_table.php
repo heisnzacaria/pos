@@ -20,7 +20,9 @@ return new class extends Migration
             $table->string('title');
             $table->date('start_date');
             $table->date('end_date');
-            $table->timestamps();
+            $table->timestamp(column:'created_at')->useCurrent();
+            $table->timestamp(column:'updated_at')->nullable();
+
         });
     }
 

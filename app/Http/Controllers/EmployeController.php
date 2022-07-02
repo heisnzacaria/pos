@@ -23,7 +23,8 @@ class EmployeController extends Controller
             'depart' => 'required',
             'start_date' => 'required',
             'end_date' => 'required',
-            'address' => 'required'
+            'address' => 'required',
+            'durer' => 'required'
         ]);
         DB::table('employe')->delete();
         $query = DB::table('employe')->insert([
@@ -35,6 +36,7 @@ class EmployeController extends Controller
                 'start_date' =>$request->input('start_date'),
                 'end_date' =>$request->input('end_date'),
                 'address' =>$request->input('address'),
+                'durer' =>$request->input('durer'),
 
 
 

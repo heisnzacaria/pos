@@ -1,13 +1,15 @@
 @extends('layouts.admin')
 
-@section('title', 'Print Work Certificate')
-@section('content-header', 'Work Certificate')
+@section('title', 'Print Formation Certificate')
+@section('content-header', 'Formation Certificate')
 @section('content-actions')
+<button type="button" class="btn btn-outline-primary and-all-other-classes">
+    <a href="/printc" style="color:red">Print</a>
+  </button>
 
 @endsection
 
 @section('content')
-
 
 
 @foreach ($company as $company )
@@ -21,98 +23,74 @@
             <div class="water-mark-overlay"></div>
             <div class="certificate-header">
                 <img src="{{ asset('images/logo.png') }}" class="logo" alt="">
-                <hr>
-                {{$company->name}}
+
+
             </div>
+
             <div class="certificate-body">
 
-                <p class="certificate-title"><strong>Certificat En  {{$employe->title}}
-
-                    {{$employe->title}}
-                     Review Masters</strong></p>
+                <p class="certificate-title"><strong>Fomation En {{$employe->title}}</strong></p>
 
 
 
 
 
-                <h1>Certificate of Completion</h1>
+                <h1 class="h1">Certificat De Fin De Formation</h1>
 
 
 
-                {{$employe->full_name}}
 
-                <p class="student-name"> </p>
+
+                <p class="student-name"> {{$employe->full_name}}</p>
                 <div class="certificate-content">
                     <div class="about-certificate">
                         <p>
-                    has completed [hours] hours on topic title here online on Date [Date of Completion]
+                            Je soussigné(e), Madame/Monsieur {{$company->responsable}}, agissant en qualité de responsable de la société   {{$company->name}} situé à  {{$company->ville}}
+                            atteste que
+                            Madame/Monsieur  {{$employe->full_name}} né(e) à {{$employe->address}}, portant(e) le CIN : {{$employe->cine}}
+                            a suivi avec assiduité et réussite une formation en {{$employe->title}} au sein de notre société du {{$employe->start_date}} au {{$employe->end_date}}
+                            pour une durée totale de {{$employe->durer}} mois.
+
+
+
                     </p>
                     </div>
                     <p class="topic-title">
-                        The Topic consists of [hours] Continuity hours and includes the following:
+                        Pour faire valoir ce que de droit.
                     </p>
                     <div class="text-center">
-                        <p class="topic-description text-muted">Contract adminitrator - Types of claim - Claim Strategy - Delay analysis - Thepreliminaries to a claim - The essential elements to a successful claim - Responses - Claim preparation and presentation </p>
+                        <div class="row">
+
+                        </div>
                     </div>
                 </div>
-                <div class="certificate-footer text-muted">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <p>Principal: ______________________</p>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <p>
 
-                                    </p>
-                                </div>
-                                <div class="col-md-6">
-                                    <p>
-                                        Endorsed by
-                                    </p>
-                                </div>
-                            </div>
+                <div class="col">
+                    {{ $employe->created_at}}
+                    <p>à {{$company->ville}} </p>
+                </div>
+                <div class="certificate-footer text-muted">
+                    <p class="topic-description text-muted">
+                        <br> Address   :{{$company->address}}
+                        <br> téléphone :+ {{$company->phone}}
+                        <br>
+                       <div class="info"> {{$company->name}} SARL AU. RC  {{$company->rc}} - IF  {{$company->if}} - patent {{$company->patent}} - ICE {{$company->ice}}
                         </div>
-                    </div>
+
+                    </p>
                 </div>
             </div>
         </div>
     </div>
+
 </div>
 
-    <a class="glyphicon glyphicon-print" href="/printc">print</a>
-
 
 @endforeach
 @endforeach
 
 
 
-
-
-
-
-
-
-
-<script>
-
-function printdiv(){
-
-var printContents = document.getElementById('print').innerHTML;
-var originalContents = document.body.innerHTML;
-
-document.body.innerHTML = printContents;
-window.print();
-document.body.innetHTML = originalContents;
-location.reload();
-
-
-}
-
-
-</script>
 
     <style>
 
@@ -139,22 +117,25 @@ body {
     bottom: 0px;
     right: 0px;
     position: absolute;
-    background-image: url(https://image.ibb.co/ckrVv7/water_mark_logo.png);
+
     background-size: 100%;
     z-index: -1;
 }
 
 .certificate-header > .logo {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
+    text-align: right;
 }
 
 .certificate-title {
     text-align: center;
+    font-family: Consolas;
 }
 
 .certificate-body {
     text-align: center;
+
 }
 
 h1 {
@@ -166,11 +147,15 @@ h1 {
 
 .student-name {
     font-size: 24px;
+    font-family: ink free;
 }
 
 .certificate-content {
     margin: 0 auto;
     width: 750px;
+    font-size: 12px;
+    font-family: Arial;
+
 }
 
 .about-certificate {
@@ -180,7 +165,24 @@ h1 {
 
 .topic-description {
 
+    text-align: left;
+    font-size: 10px
+}
+.info
+{
     text-align: center;
+    font-size: 10px
+}
+
+.col{
+text-align: left;
+font-size: 9px;
+padding: 0%;
+}
+.h1{
+
+    color: rgb(71, 71, 199);
+
 }
 
 
@@ -188,12 +190,7 @@ h1 {
 
 
 
-
-
-
     </style>
-
-
 
 
 

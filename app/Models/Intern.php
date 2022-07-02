@@ -6,8 +6,9 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Intern extends Model
-{
+{public $timestamps = true;
+
     protected $fillable = [
-        'full_name ','cine','birthday','title','start_date','end_date','address'
+        'full_name ','cine','birthday','title','start_date','end_date','address','created_at','updated_at'
      ];
 }
