@@ -22,7 +22,7 @@ class EmployeController extends Controller
             'title' => 'required',
             'depart' => 'required',
             'start_date' => 'required',
-            'end_date' => 'required',
+            // 'end_date' => 'required',
             'address' => 'required',
             'durer' => 'required'
         ]);
@@ -34,7 +34,7 @@ class EmployeController extends Controller
                 'title' =>$request->input('title'),
                 'depart' =>$request->input('depart'),
                 'start_date' =>$request->input('start_date'),
-                'end_date' =>$request->input('end_date'),
+                //  'end_date' =>('2022 -01 -01'),
                 'address' =>$request->input('address'),
                 'durer' =>$request->input('durer'),
 

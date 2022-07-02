@@ -3,9 +3,7 @@
 @section('title', 'Print Formation Certificate')
 @section('content-header', 'Formation Certificate')
 @section('content-actions')
-<button type="button" class="btn btn-outline-primary and-all-other-classes">
-    <a href="/printc" style="color:red">Print</a>
-  </button>
+<a href="/printc" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Print</a>
 
 @endsection
 
@@ -15,7 +13,7 @@
 @foreach ($company as $company )
   @foreach($employe as $employe)
 
-
+<div class="body1">
 <div class="container" id="print">
 
     <div class="certificate-container">
@@ -82,7 +80,7 @@
             </div>
         </div>
     </div>
-
+</div>
 </div>
 
 
@@ -92,11 +90,12 @@
 
 
 
-    <style>
+<style>
 
 
-body {
-    font-family: Roboto;
+.body1{
+
+    font-family: MSGothic;
 }
 
 .certificate-container {
@@ -130,7 +129,7 @@ body {
 
 .certificate-title {
     text-align: center;
-    font-family: Consolas;
+
 }
 
 .certificate-body {
@@ -147,14 +146,14 @@ h1 {
 
 .student-name {
     font-size: 24px;
-    font-family: ink free;
+
 }
 
 .certificate-content {
     margin: 0 auto;
     width: 750px;
     font-size: 12px;
-    font-family: Arial;
+
 
 }
 
@@ -184,22 +183,5 @@ padding: 0%;
     color: rgb(71, 71, 199);
 
 }
-
-
-
-
-
-
-    </style>
-
-
-
-
-
-
-
-
-
-
-
+</style>
 @endsection

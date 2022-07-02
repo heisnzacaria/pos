@@ -1,6 +1,8 @@
 
 @foreach ($company as $company )
 @foreach($employe as $employe)
+<body>
+
 
 <div class="container" id="print">
   <div class="certificate-container">
@@ -73,7 +75,7 @@
         </div>
     </div>
 </div>
-
+</body>
 
 
 
@@ -83,14 +85,15 @@
 
 
 
-    <style>
+ <style>
 
+.body{
+    font-family: MSGothic;
+}
 .container{
+
 transform: rotate(90deg);
 
-}
-body {
-    font-family: Roboto;
 }
 
 .certificate-container {
