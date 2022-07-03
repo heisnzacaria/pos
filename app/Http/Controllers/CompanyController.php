@@ -35,11 +35,6 @@ class CompanyController extends Controller
 $result = DB::table('company')->updateOrInsert(['id'=> $id],$data);
 $company =  DB::select('select * from company where id = 1');
 
-
-
-
-
-
 if($result){
     return back()->with('success', 'Company details has been updated');
           }

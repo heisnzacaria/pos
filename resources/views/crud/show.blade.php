@@ -28,12 +28,12 @@
   <p class="sarl-name"> {{$company->name}}
   <br> Address   :{{$company->address}} {{$company->ville}}
   <br> téléphone :+ {{$company->phone}}
-  <br></p>
+  <br></p> <hr>
   <div class="col">
-    <hr>
-    {{ $employe->created_at}}
-    <p>à {{$company->ville}} </p>
-</div>
+    <br>   {{ $employe->created_at}}
+              à {{$company->ville}}
+          </div>
+
 
             <div class="certificate-body">
 
@@ -49,7 +49,7 @@
                             Je soussigné(e), Madame/Monsieur {{$company->responsable}}, agissant en qualité de
                             la société {{$company->name}} ,situé à {{$company->address}} et portont la patent Nᵒ {{$company->patent}} ,
                             certifie que Madame/Monsieur {{$employe->full_name}} titulaire de la CIN Nᵒ {{$employe->cine}}
-                            fait partie de notre personnels en departement {{$employe->depart}} comme {{$employe->title}}
+                            fait partie de notre personnels au département {{$employe->depart}} comme {{$employe->title}}
                             depuis le {{$employe->start_date}} à çe jour.
 
                     </p>
@@ -59,7 +59,7 @@
                     </p>
                     <div class="sign">
 
-                            Signiature
+                        {{$company->responsable}}
 
                     </div>
 
@@ -68,11 +68,9 @@
 
                 <div class="certificate-footer text-muted">
                     <p class="topic-description text-muted">
-                        <br> Address   :{{$company->address}}
-                        <br> téléphone :+ {{$company->phone}}
-                        <br>
-                        <hr>
-                       <div class="info"> {{$company->name}} SARL AU. RC  {{$company->rc}} - IF  {{$company->if}} - patent {{$company->patent}} - ICE {{$company->ice}}
+<hr>
+                        <div class="info"> {{$company->name}} SARL AU. RC  {{$company->rc}} - IF  {{$company->if}} - patent {{$company->patent}} - ICE {{$company->ice}}
+
                         </div>
 
                     </p>
@@ -95,13 +93,21 @@
     font-size: 20px;
     margin: 20px;
     width: 640px;
+    height: 25%;
 
 }
 
 .body1{
+    background: white;
+  width: 21cm;
 
-    font-family: MSGothic;
-    size: a4;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 0.5cm;
+  font-family: MSGothic;
+
+
+
 }
 
 .certificate-container {
@@ -110,10 +116,10 @@
     width: 760px;
 }
 .certificate {
-    border: 5px solid #0C5280;
+
     padding: 25px;
-    height: 880px;
-    width: 740px;
+    width: 19cm;
+    height: 25.7cm;
     position: center;
 }
 
@@ -145,11 +151,12 @@
 
 }
 
-h1 {
+.h1 {
 
     font-weight: 400;
     font-size: 48px;
     color: #0C5280;
+    height: 90px;
 }
 
 .sarl-name {
@@ -176,15 +183,18 @@ h1 {
 }
 
 .topic-description {
-    height: 70px;
+    height: 90px;
     text-align: left;
-    font-size: 10px
+    font-size: 10px;
+
 }
 .info
 {
-    height: 50px;
+    height: 90px;
     text-align: center;
-    font-size: 10px
+    font-size: 10px;
+    bottom: 0%;
+
 }
 
 .col{
@@ -198,7 +208,7 @@ padding: 0%;
 
 }
 .sign{
-    text-align: left;
+    text-align: center;
     height: 100px;
 
 

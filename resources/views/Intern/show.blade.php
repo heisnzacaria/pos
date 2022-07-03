@@ -1,194 +1,221 @@
 @extends('layouts.admin')
 
-@section('title', 'Print Work Certificate')
-@section('content-header', 'Work Certificate')
+@section('title', 'Print Intership Certificate')
+@section('content-header', 'Intership Certificate')
 @section('content-actions')
-
+<a href="/printintern" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Print</a>
 @endsection
 
 @section('content')
 
 
 
+@foreach ($company as $company )
+@foreach($employe as $employe)
+
+<div class="body1">
 <div class="container" id="print">
 
-    <div class="certificate-container">
-        <div class="certificate">
-            <div class="water-mark-overlay"></div>
-            <div class="certificate-header">
-                <img src="{{ asset('images/logo.png') }}" class="logo" alt="">
-            </div>
-            <div class="certificate-body">
-
-                <p class="certificate-title"><strong>RENR NCLEX AND CONTINUING EDUCATION  @foreach($company as $company)
-
-                    {{$company->name}}
-                    @endforeach  Review Masters</strong></p>
+  <div class="certificate-container">
+      <div class="certificate">
+          <div class="water-mark-overlay"></div>
+          <div class="certificate-header">
+              <img src="{{ asset('images/logo.png') }}" class="logo" alt="">
 
 
-                <h1>Certificate of Completion</h1>
-
-                @foreach($employe as $employe)
-
-                {{$employe->full_name}}
-                @endforeach
-                <p class="student-name"> </p>
-                <div class="certificate-content">
-                    <div class="about-certificate">
-                        <p>
-                    has completed [hours] hours on topic title here online on Date [Date of Completion]
-                    </p>
-                    </div>
-                    <p class="topic-title">
-                        The Topic consists of [hours] Continuity hours and includes the following:
-                    </p>
-                    <div class="text-center">
-                        <p class="topic-description text-muted">Contract adminitrator - Types of claim - Claim Strategy - Delay analysis - Thepreliminaries to a claim - The essential elements to a successful claim - Responses - Claim preparation and presentation </p>
-                    </div>
-                </div>
-                <div class="certificate-footer text-muted">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <p>Principal: ______________________</p>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <p>
-
-                                    </p>
-                                </div>
-                                <div class="col-md-6">
-                                    <p>
-                                        Endorsed by
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          </div>
+<p class="sarl-name"> {{$company->name}}
+<br> Address   :{{$company->address}} {{$company->ville}}
+<br> téléphone :+ {{$company->phone}}
+<br></p> <hr>
+<div class="col">
+  <br>   {{ $employe->created_at}}
+            à {{$company->ville}}
         </div>
-    </div>
+
+
+          <div class="certificate-body">
+
+
+
+              <h1 class="h1">Attestation de Stage</h1>
+
+
+
+              <div class="certificate-content">
+                  <div class="about-certificate">
+                      <p>
+                          Je soussigné(e), Madame/Monsieur {{$company->responsable}}, agissant en qualité de
+                          la société {{$company->name}} ,situé à {{$company->address}} et portont la patent Nᵒ {{$company->patent}} ,
+                          certifie que Madame/Monsieur {{$employe->full_name}} titulaire de la CIN Nᵒ {{$employe->cine}}
+                          a effectué un Stage au département {{$employe->depart}} comme {{$employe->title}}
+                            pour une durée totale de {{$employe->durer}} mois.
+                          du {{$employe->start_date}} au {{$employe->end_date}}, pour une durée totale de {{$employe->durer}} mois.
+
+                  </p>
+                  </div>
+                  <p class="droit">
+                    Cette attestation est délivrée à l’intéressé(e) pour servir
+                    et valoir ce que de droit.
+                  </p>
+                  <div class="sign">
+
+                          {{$company->responsable}}
+
+                  </div>
+
+              </div>
+
+
+              <div class="certificate-footer text-muted">
+                  <p class="topic-description text-muted">
+<hr>
+                      <div class="info"> {{$company->name}} SARL AU. RC  {{$company->rc}} - IF  {{$company->if}} - patent {{$company->patent}} - ICE {{$company->ice}}
+
+                      </div>
+
+                  </p>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
 </div>
 
-    <a href="/printintern">print</a>
+
+@endforeach
+@endforeach
 
 
 
 
-
-
-
-
-
-
-
-
-<script>
-
-function printdiv(){
-
-var printContents = document.getElementById('print').innerHTML;
-var originalContents = document.body.innerHTML;
-
-document.body.innerHTML = printContents;
-window.print();
-document.body.innetHTML = originalContents;
-location.reload();
-
+<style>
+.droit{
+  font-size: 20px;
+  margin: 20px;
+  width: 640px;
+  height: 25%;
 
 }
 
+.body1{
+  background: white;
+width: 21cm;
 
-</script>
+display: block;
+margin: 0 auto;
+margin-bottom: 0.5cm;
+font-family: MSGothic
 
-    <style>
 
 
-body {
-    font-family: Roboto;
 }
 
 .certificate-container {
-    padding: 50px;
-    width: 1024px;
+  padding: 25px;
+
+  width: 760px;
 }
 .certificate {
-    border: 20px solid #0C5280;
-    padding: 25px;
-    height: 600px;
-    position: relative;
+
+  padding: 25px;
+  width: 19cm;
+  height: 25.7cm;
+  position: center;
 }
 
 .certificate:after {
-    content: '';
-    top: 0px;
-    left: 0px;
-    bottom: 0px;
-    right: 0px;
-    position: absolute;
-    background-image: url(https://image.ibb.co/ckrVv7/water_mark_logo.png);
-    background-size: 100%;
-    z-index: -1;
+  content: '';
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  position: absolute;
+
+  background-size: 100%;
+  z-index: -1;
 }
 
 .certificate-header > .logo {
-    width: 80px;
-    height: 80px;
+  width: 60px;
+  height: 60px;
+  text-align: right;
 }
 
 .certificate-title {
-    text-align: center;
+  text-align: center;
+
 }
 
 .certificate-body {
-    text-align: center;
+  text-align: center;
+
 }
 
-h1 {
+.h1 {
 
-    font-weight: 400;
-    font-size: 48px;
-    color: #0C5280;
+  font-weight: 400;
+  font-size: 48px;
+  color: #0C5280;
+  height: 90px;
 }
 
-.student-name {
-    font-size: 24px;
+.sarl-name {
+  font-size: 11px;
+  padding: 5px;
+  width: 160px;
+
 }
 
 .certificate-content {
-    margin: 0 auto;
-    width: 750px;
+  margin: 0 auto;
+  width: 750px;
+  font-size: 12px;
+
+
 }
 
 .about-certificate {
-    width: 380px;
-    margin: 0 auto;
+
+  margin: 20px;
+  width: 640px;
+  font-size: 23px;
+ text-align: justify;
 }
 
 .topic-description {
+  height: 90px;
+  text-align: left;
+  font-size: 10px;
 
-    text-align: center;
+}
+.info
+{
+  height: 90px;
+  text-align: center;
+  font-size: 10px;
+  bottom: 0%;
+
 }
 
+.col{
+text-align: left;
+font-size: 9px;
+padding: 0%;
+}
+.h1{
+
+  color: rgb(71, 71, 199);
+
+}
+.sign{
+  text-align: center;
+  height: 100px;
 
 
 
-
-
-
-
-
-    </style>
-
-
-
-
-
-
-
+}
+</style>
 
 
 @endsection
-

@@ -66,7 +66,7 @@ if($query){
 
         $pdf = PDF::loadView('intern.print',['employe'=>$employe, 'company'=>$company]);
 
-        return $pdf->download('Digital Work Certificate.pdf');
+        return $pdf->download('Digital Intership Certificate.pdf');
 
 
 
