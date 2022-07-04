@@ -9,7 +9,7 @@
 @section('content')
 
 
-
+@foreach($signature as $signature)
 @foreach ($company as $company )
 @foreach($employe as $employe)
 
@@ -60,9 +60,10 @@
                   </p>
                   <div class="sign">
 
-                          {{$company->responsable}}
+                    signature <br>:
+                    <img src="{{ asset($signature->signature) }}" alt="" height="100">
 
-                  </div>
+                </div>
 
               </div>
 
@@ -83,6 +84,7 @@
 </div>
 
 
+@endforeach
 @endforeach
 @endforeach
 

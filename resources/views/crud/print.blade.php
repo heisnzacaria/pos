@@ -1,6 +1,6 @@
 @foreach ($company as $company )
   @foreach($employe as $employe)
-
+  @foreach($signature as $signature)
 <div class="body1">
 <div class="container" id="print">
 
@@ -44,13 +44,17 @@
                         La présente attestation lui est délivrée à sa demande pour servir et valoir ce que de droit.
                     </p>
                     <div class="sign">
+signature
+   </div>
+                       <div class="sign">
+                                <br>:
+                                                        <img src="{{ public_path($signature->signature) }}" alt="" height="100">
 
-
-                            Signiature
+                                                    </div>
 
                     </div>
 
-                </div>
+
 
 
                 <div class="certificate-footer text-muted">
@@ -74,7 +78,7 @@
 
 @endforeach
 @endforeach
-
+@endforeach
 
 
 
@@ -176,7 +180,7 @@ margin: -9%;
 }
 
 .topic-description {
-    height: 50px;
+    height: auto;
     text-align: left;
     font-size: 19px;
 
@@ -204,7 +208,7 @@ margin: -9%;
 .sign{
     text-align: center;
 
-    height: 100px;
+    height: 60px;
 
 
 

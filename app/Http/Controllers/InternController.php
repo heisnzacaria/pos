@@ -43,9 +43,10 @@ class InternController extends Controller
 
         ]);
 if($query){
+    $signature = DB::select('select * from signatures ');
     $company = DB::select('select * from company' );
     $employe = DB::select('select * from employe');
-    return view('intern.show',['employe'=>$employe, 'company'=>$company])->with('success', 'Employe details been saved');
+    return view('intern.show',['employe'=>$employe,'company'=>$company , 'signature'=>$signature])->with('success', 'Employe details been saved');
           }
             else{
     return back()->with('fail','to save employee details');
@@ -53,18 +54,19 @@ if($query){
     }
 
     public function show(){
+        $signature = DB::select('select * from signatures ');
         $employe = DB::select('select * from employe');
         $company = DB::select('select * from company' );
-        return view('intern.show',['employe'=>$employe, 'company'=>$company]);
+        return view('intern.print',['employe'=>$employe,'company'=>$company , 'signature'=>$signature]);
 
     }
 
     public function print(){
-
+        $signature = DB::select('select * from signatures ');
         $company = DB::select('select * from company' );
         $employe = DB::select('select * from employe');
 
-        $pdf = PDF::loadView('intern.print',['employe'=>$employe, 'company'=>$company]);
+        $pdf = PDF::loadView('intern.print',['employe'=>$employe,'company'=>$company , 'signature'=>$signature]);
 
         return $pdf->download('Digital Intership Certificate.pdf');
 

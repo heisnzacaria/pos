@@ -1,6 +1,6 @@
 @foreach ($company as $company )
 @foreach($employe as $employe)
-
+@foreach($signature as $signature)
 <div class="body1">
     <div class="container" id="print">
 
@@ -47,12 +47,16 @@
                         et valoir ce que de droit.
                       </p>
                       <div class="sign">
+                        signature <br>
 
-                              {{$company->responsable}}
+                           </div>
+                                               <div class="sign">
 
-                      </div>
+                                                                                <img src="{{ public_path($signature->signature) }}" alt="" height="100">
 
-                  </div>
+                                                                            </div>
+
+                                            </div>
 
 
                   <div class="certificate-footer text-muted">
@@ -73,7 +77,7 @@
 
     @endforeach
     @endforeach
-
+    @endforeach
 
 
     <style>
@@ -189,9 +193,10 @@
         }
 
         .col{
-            width: auto;
-            height: 40px;
-            text-align: center;
+
+text-align: left;
+font-size: 9px;
+padding: 0%;
 
         }
         .h1{
@@ -201,8 +206,6 @@
         }
         .sign{
             text-align: center;
-
-            height: 100px;
 
 
 

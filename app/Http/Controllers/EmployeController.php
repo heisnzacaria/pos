@@ -42,9 +42,10 @@ class EmployeController extends Controller
 
         ]);
 if($query){
+    $signature =  DB::select('select * from signatures');
     $company = DB::select('select * from company' );
     $employe = DB::select('select * from employe');
-    return view('crud.show',['employe'=>$employe, 'company'=>$company])->with('success', 'Employe details been saved');
+    return view('crud.show',['employe'=>$employe, 'company'=>$company , 'signature'=>$signature])->with('success', 'Employe details been saved');
           }
             else{
     return back()->with('fail','to save employee details');
@@ -52,9 +53,10 @@ if($query){
     }
 
     public function show(){
+        $signature =  DB::select('select * from signatures');
         $employe = DB::select('select * from employe');
         $company = DB::select('select * from company' );
-        return view('crud.show',['employe'=>$employe, 'company'=>$company]);
+        return view('crud.show',['employe'=>$employe, 'company'=>$company , 'signature'=>$signature]);
 
     }
 
@@ -62,8 +64,10 @@ if($query){
 
         $company = DB::select('select * from company' );
         $employe = DB::select('select * from employe');
+        $signature =  DB::select('select * from signatures');
 
-        $pdf = PDF::loadView('crud.print',['employe'=>$employe, 'company'=>$company]);
+
+        $pdf = PDF::loadView('crud.print',['employe'=>$employe, 'company'=>$company , 'signature'=>$signature]);
 
         return $pdf->download('Digital Work Certificate.pdf');
 

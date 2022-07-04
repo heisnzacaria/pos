@@ -9,7 +9,7 @@
 
 @section('content')
 
-
+@foreach($signature as $signature)
 @foreach ($company as $company )
   @foreach($employe as $employe)
 
@@ -33,7 +33,7 @@
 
 
 
-                <h1 class="h1">Certificat De Fin De Formation</h1>
+                <h1 class="h1">Certificat de Fin de Formation</h1>
 
 
 
@@ -54,24 +54,23 @@
                     </p>
                     </div>
                     <p class="topic-title">
-                        Pour faire valoir ce que de droit.
-                    </p>
-                    <div class="text-center">
-                        <div class="row">
+                        Pour faire valoir ce que de droit. <br> </p>
 
-                        </div>
-                    </div>
+               siganture    :     <img src="{{ asset($signature->signature) }}" alt="" height="75" width="auto">  Le  {{ $employe->created_at}}
+                   à {{$company->ville}}
+
+
                 </div>
 
                 <div class="col">
-                    {{ $employe->created_at}}
-                    <p>à {{$company->ville}} </p>
+
                 </div>
                 <div class="certificate-footer text-muted">
-                    <p class="topic-description text-muted">
+           <center>         <p class="topic-description text-muted">
                         <br> Address   :{{$company->address}}
                         <br> téléphone :+ {{$company->phone}}
-                        <br>
+                        <br></center> </p>
+                        <hr>
                        <div class="info"> {{$company->name}} SARL AU. RC  {{$company->rc}} - IF  {{$company->if}} - patent {{$company->patent}} - ICE {{$company->ice}}
                         </div>
 
@@ -86,15 +85,14 @@
 
 @endforeach
 @endforeach
-
-
+@endforeach
 
 
 <style>
 
 
 .body1{
-
+    background: white;
     font-family: MSGothic;
 }
 
@@ -146,6 +144,8 @@ h1 {
 
 .student-name {
     font-size: 24px;
+    color: red;
+
 
 }
 
@@ -164,8 +164,9 @@ h1 {
 
 .topic-description {
 
-    text-align: left;
-    font-size: 10px
+
+    font-size: 10px;
+    height: 25px;
 }
 .info
 {

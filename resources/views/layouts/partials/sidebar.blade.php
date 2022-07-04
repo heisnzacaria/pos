@@ -79,21 +79,21 @@
                         </a>
                     </li> --}}
                     <li class="nav-item has-treeview">
-                        <a href="crudc" class="nav-link ">
+                        <a href="attestationdeformation" class="nav-link ">
                             <i class="nav-icon fas fa-handshake"></i>
 
                             <p>Formation Certificate</p>
                         </a>
                     </li>
                     <li class="nav-item has-treeview">
-                        <a href="crudi" class="nav-link ">
+                        <a href="attestationdestage" class="nav-link ">
                             <i class="nav-icon fas fa-envelope"></i>
 
                             <p>Internship Certificate</p>
                         </a>
 
                     <li class="nav-item has-treeview">
-                        <a href="crud" class="nav-link ">
+                        <a href="attestationdetravail" class="nav-link ">
                             <i class="nav-icon fas fa-briefcase"></i>
 
                             <p>Work Certificate</p>
@@ -108,7 +108,7 @@
                     </a>
                 </li>
                 <li class="nav-item has-treeview">
-                    <a href="crud_comp" class="nav-link ">
+                    <a href="settings-company" class="nav-link ">
                         <i class="nav-icon fas fa-info"></i>
 
                         <p>Company Setting</p>
@@ -119,6 +119,12 @@
                     <a href="{{ route('settings.index') }}" class="nav-link {{ activeSegment('settings') }}">
                         <i class="nav-icon fas fa-cogs"></i>
                         <p>Settings</p>
+                    </a>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a href="signature-pad" class="nav-link {{ activeSegment('settings') }}">
+                        <i class="nav-icon fas fa-cogs"></i>
+                        <p>Set New Signature</p>
                     </a>
                 </li>
 

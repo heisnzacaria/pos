@@ -39,9 +39,10 @@ class CertifController extends Controller
                 'durer' =>$request->input('durer'),
         ]);
 if($query){
+    $signature = DB::select('select * from signatures');
     $company = DB::select('select * from company' );
     $employe = DB::select('select * from employe');
-    return view('certif.show',['employe'=>$employe, 'company'=>$company])->with('success', 'Employe details been saved');
+    return view('certif.show',['employe'=>$employe,'company'=>$company , 'signature'=>$signature])->with('success', 'Employe details been saved');
           }
             else{
     return back()->with('fail','to save employee details');
@@ -52,18 +53,19 @@ if($query){
     }
 
     public function show(){
+        $signature = DB::select('select * from signatures ');
         $company = DB::select('select * from company' );
         $employe = DB::select('select * from employe');
-        return view('certif.show',['employe'=>$employe, 'company'=>$company]);
+        return view('certif.show',['employe'=>$employe,  'company'=>$company , 'signature'=>$signature]);
 
 
     }
     public function print(){
-
+        $signature = DB::select('select * from signatures');
         $company = DB::select('select * from company' );
         $employe = DB::select('select * from employe');
 
-        $pdf = PDF::loadView('certif.print',['employe'=>$employe, 'company'=>$company]);
+        $pdf = PDF::loadView('certif.print',['employe'=>$employe,  'company'=>$company , 'signature'=>$signature]);
 
         return $pdf->download('Formation Certificate.pdf');
 
