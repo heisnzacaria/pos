@@ -35,8 +35,8 @@
                             Je soussigné(e), Madame/Monsieur {{$company->responsable}}, agissant en qualité de
                             la société {{$company->name}} ,situé à {{$company->address}} et portont la patent nº {{$company->patent}} ,
                             certifie que Madame/Monsieur {{$employe->full_name}} titulaire de la CIN nº {{$employe->cine}}
-                            fait partie de notre personnels au département {{$employe->depart}} comme {{$employe->title}}
-                            depuis le {{$employe->start_date}} à çe jour.
+                            faisait partie de notre personnels au département {{$employe->depart}} comme {{$employe->title}}
+                            du {{$employe->start_date}} au {{$employe->end_date}} pour une durer de {{$employe->durer}} mois.
 
                     </p>
                     </div>

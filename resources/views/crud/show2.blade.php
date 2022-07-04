@@ -1,3 +1,16 @@
+@extends('layouts.admin')
+
+@section('title', 'Print Work Certificate')
+@section('content-header', 'Work Certificate')
+@section('content-actions')
+<a href="/printwork2" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Print</a>
+@endsection
+
+@section('content')
+
+
+
+
 @foreach ($company as $company )
   @foreach($employe as $employe)
   @foreach($signature as $signature)
@@ -8,19 +21,20 @@
         <div class="certificate">
             <div class="water-mark-overlay"></div>
             <div class="certificate-header">
-                <img src="{{ public_path('images/logo.png') }}" class="logo" alt="">
+                <img src="{{ asset('images/logo.png') }}" class="logo" alt="">
 
 
             </div>
   <p class="sarl-name"> {{$company->name}}
   <br> Address   :{{$company->address}} {{$company->ville}}
   <br> téléphone :+ {{$company->phone}}
-  <br></p>
-  <hr>
+  <br></p> <hr>
   <div class="col">
     <br>   {{ $employe->created_at}}
               à {{$company->ville}}
           </div>
+
+
             <div class="certificate-body">
 
 
@@ -35,26 +49,23 @@
                             Je soussigné(e), Madame/Monsieur {{$company->responsable}}, agissant en qualité de
                             la société {{$company->name}} ,situé à {{$company->address}} et portont la patent nº {{$company->patent}} ,
                             certifie que Madame/Monsieur {{$employe->full_name}} titulaire de la CIN nº {{$employe->cine}}
-                            fait partie de notre personnels au département {{$employe->depart}} comme {{$employe->title}}
-                            depuis le {{$employe->start_date}} à çe jour.
+                            faisait partie de notre personnels au département {{$employe->depart}} comme {{$employe->title}}
+                            du {{$employe->start_date}} au {{$employe->end_date}} pour une durer de {{$employe->durer}} mois.
 
                     </p>
                     </div>
                     <p class="droit">
                         La présente attestation lui est délivrée à sa demande pour servir et valoir ce que de droit.
+
+
                     </p>
                     <div class="sign">
-signature
-   </div>
-                       <div class="sign">
-                                <br>:
-                                                        <img src="{{ public_path($signature->signature) }}" alt="" height="100">
-
-                                                    </div>
+signature  <br>
+                        <img src="{{ asset($signature->signature) }}" alt="" height="100">
 
                     </div>
 
-
+                </div>
 
 
                 <div class="certificate-footer text-muted">
@@ -63,9 +74,6 @@ signature
                         <div class="info"> {{$company->name}} SARL AU. RC  {{$company->rc}} - IF  {{$company->if}} - patent {{$company->patent}} - ICE {{$company->ice}}
 
                         </div>
-
-                    </p>
-                </div>
 
                     </p>
                 </div>
@@ -86,7 +94,7 @@ signature
 .droit{
     font-size: 20px;
     margin: 20px;
-    width: auto;
+    width: 640px;
     height: 25%;
 
 }
@@ -96,15 +104,12 @@ signature
   width: 21cm;
 
   display: block;
-margin: -9%;
+  margin: 0 auto;
   margin-bottom: 0.5cm;
-  font-family: MSGothic
+  font-family: MSGothic;
 
 
-    /* width: 21cm;
-  height: 29.7cm;
-    font-family: MSGothic;
-    size: a4; */
+
 }
 
 .certificate-container {
@@ -173,21 +178,21 @@ margin: -9%;
 
 .about-certificate {
 
-    margin: auto;
-    width: auto;
+    margin: 20px;
+    width: 640px;
     font-size: 23px;
-   text-align: justify,center;
+   text-align: justify;
 }
 
 .topic-description {
-    height: auto;
+    height: 90px;
     text-align: left;
-    font-size: 19px;
+    font-size: 10px;
 
 }
 .info
 {
-
+    height: 90px;
     text-align: center;
     font-size: 10px;
     bottom: 0%;
@@ -195,10 +200,9 @@ margin: -9%;
 }
 
 .col{
-    width: auto;
-    height: 40px;
-    text-align: center;
-
+text-align: left;
+font-size: 9px;
+padding: 0%;
 }
 .h1{
 
@@ -207,13 +211,13 @@ margin: -9%;
 }
 .sign{
     text-align: center;
-
-    height: 60px;
-
-
+    height: 100px;
 
 
 
 }
 </style>
+
+
+@endsection
 

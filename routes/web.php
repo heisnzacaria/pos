@@ -51,10 +51,14 @@ Route::get('quote', [ProductController::class, 'quote'])->name('quote.index');
     Route::delete('/cart/empty', [CartController::class, 'empty']);
 
 //work certif
-    Route::get('attestationdetravail', [EmployeController::class, 'index']);
+Route::get('attestationdetravail', [EmployeController::class, 'index']);
+Route::get('attestationdetravailold', [EmployeController::class, 'index2']);
 Route::post('new', [EmployeController::class, 'new']);
+Route::post('new2', [EmployeController::class, 'new2']);
 Route::get('show', [EmployeController::class, 'show']);
+Route::get('show2', [EmployeController::class, 'show2']);
 Route::get('printwork', [EmployeController::class, 'print']);
+Route::get('printwork2', [EmployeController::class, 'print2']);
 
 //intership Certif
 Route::get('attestationdestage', [InternController::class, 'index']);
@@ -84,9 +88,13 @@ Route::post('signature-pad',[SignatureController::class ,'store']);
 //-- work
 // work stuff
 Route::get('attestationdetravail', [EmployeController::class, 'index']);
+Route::get('attestationdetravailold', [EmployeController::class, 'index2']);
 Route::post('new', [EmployeController::class, 'new']);
+Route::post('new2', [EmployeController::class, 'new2']);
 Route::get('show', [EmployeController::class, 'show']);
+Route::get('show2', [EmployeController::class, 'show2']);
 Route::get('printwork', [EmployeController::class, 'print']);
+Route::get('printwork2', [EmployeController::class, 'print2']);
 
 // certif
 Route::get('attestationdeformation', [CertifController::class, 'index']);

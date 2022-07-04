@@ -67,7 +67,7 @@
                     <li class="nav-item has-treeview">
                         <a  class="nav-title ">
                             <i class="nav-icon fas fa-title"></i>
-
+<hr>
                             <p>DIGITAL CERTIFICATES</p>
                         </a>
                     </li>
@@ -92,18 +92,22 @@
                             <p>Internship Certificate</p>
                         </a>
 
-                    <li class="nav-item has-treeview">
-                        <a href="attestationdetravail" class="nav-link ">
-                            <i class="nav-icon fas fa-briefcase"></i>
 
-                            <p>Work Certificate</p>
-                        </a>
-                    </li>
-                </li>
+                            <li class="nav-item dropdown" class="nav-icon fas fa-title" >
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="true">Work Certificate Options</a>
+                                <div class="dropdown-menu">
+                                  <a class="dropdown-item" style="color:#000000" href="attestationdetravail">For Current Employes</a>
+
+                                  <div class="dropdown-divider"></div>
+                                  <a class="dropdown-item" style="color:#000000" href="attestationdetravailold">For Ancient Members</a>
+                                </div>
+                              </li>
+
+
                 <li class="nav-item has-treeview">
                     <a  class="nav-title ">
                         <i class="nav-icon fas fa-title"></i>
-
+<hr>
                         <p>APPLICATION SETTING</p>
                     </a>
                 </li>
@@ -149,9 +153,10 @@
 .nav-title{
 
 
-    font-family: "Lucida Console", "Courier New", monospace;
-    font-style: italic;
-    color: #4CAF50;
+    font-family: Bradley Hand;
+
+
+
 }
 
 </style>

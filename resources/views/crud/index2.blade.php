@@ -16,11 +16,11 @@
         <div class="col-md-12 col-md-offset-6" style="margin-top:1%">
             <h4><center>Work Certificate details</h4></center>
             <hr>
-            <center> <div class="alert alert-secondary" style="italic">
-This Work Certificate is for persons who are in our personnel
-          </center>
-            <hr>
-                <form action="new" method="post">
+            <div class="alert alert-secondary">
+                <center>This Work Certificate is for persons who are no longer in our personnel</center>
+             </div>
+             <hr>
+                <form action="new2" method="post">
                     @csrf
                     <div class="form-group">
                         <label for="">Full Name</label>
@@ -60,7 +60,7 @@ This Work Certificate is for persons who are in our personnel
                     </div>
                     <div class="form-group">
                         <label for="">Departement</label>
-                        <input type="text" class="form-control" name="depart" placeholder="Enter Name of the Departement" value="{{ old('depart')}}">
+                        <input type="text" class="form-control" name="depart" placeholder="Enter the name of Departement" value="{{ old('depart')}}">
                         <span style="color: red">@error('depart') {{$message}}
 
                             @enderror</span>
